@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Impuesto a la Terquedad — Jeniffer Balabuch</title>
+  <meta name="description" content="El libro que le pone precio a lo que le cuesta a tu empresa resistirse al cambio. Por Jeniffer Balabuch.">
+  <meta property="og:title" content="El Impuesto a la Terquedad">
+  <meta property="og:description" content="Cada día que tu empresa no se digitaliza, alguien te cobra. Descubre cuánto.">
+  <meta property="og:image" content="https://d1yei2z3i6k35z.cloudfront.net/16597047/69b88c5233ad51.55986636_Portada_Impuesto_a_la_terquedad.jpg">
+
+  <!-- ═══════════════════════════════════════════
+       GOOGLE ANALYTICS GA4
+       Reemplaza G-XXXXXXXXXX con tu Measurement ID
+  ═══════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       METRICOOL TRACKING PIXEL
+       Reemplaza TU_HASH_METRICOOL con tu hash único
+       (Lo encuentras en Metricool > Ajustes > Pixel de seguimiento)
+  ═══════════════════════════════════════════ -->
+  <script>
+    function loadScript(a){
+      var b=document.getElementsByTagName("head")[0],
+          c=document.createElement("script");
+      c.type="text/javascript";
+      c.src="https://tracker.metricool.com/resources/be.js";
+      c.onreadystatechange=a;
+      c.onload=a;
+      b.appendChild(c)
+    }
+    loadScript(function(){
+      beTracker.t({hash:"TU_HASH_METRICOOL"})
+    });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:       #1B2E4B;
+      --navy-deep:  #121F33;
+      --teal:       #0B7A8A;
+      --teal-light: #0D8F9F;
+      --gold:       #A8722A;
+      --gold-light: #C28A3A;
+      --warm-white: #F5F4F0;
+      --warm-gray:  #E8E4DC;
+      --mid-gray:   #4A5568;
+      --light-gray: #D1CEC8;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--navy);
+      background: var(--warm-white);
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .gold-bar {
+      display: inline-block;
+      width: 40px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+    .section-label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 16px;
+    }
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(18,31,51,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(11,122,138,0.2);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+    }
+    .nav-name {
+      font-family: 'Crimson Text', serif;
+      font-size: 18px; color: var(--warm-white);
+      line-height: 1;
+    }
+    .nav-name .first { font-weight: 400; opacity: 0.8; }
+    .nav-name .last  { font-weight: 700; }
+    .nav-cta {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      background: var(--navy-deep);
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex; align-items: center;
+    }
+    /* Anillos decorativos */
+    .hero::before {
+      content: '';
+      position: absolute; right: -200px; top: -200px;
+      width: 800px; height: 800px;
+      border: 1px solid rgba(11,122,138,0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; right: -320px; top: -320px;
+      width: 1100px; height: 1100px;
+      border: 1px solid rgba(11,122,138,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    /* Línea accent izquierda */
+    .hero-accent-line {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--teal);
+    }
+    /* Dots grid */
+    .hero-dots {
+      position: absolute; left: 60px; bottom: 80px;
+      width: 120px; height: 120px;
+      background-image: radial-gradient(circle, rgba(11,122,138,0.25) 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 80px; align-items: center;
+      position: relative; z-index: 2;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 2px;
+      background: var(--teal);
+    }
+    .hero-headline {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 700;
+      color: var(--warm-white);
+      line-height: 1.08;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-subhead {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 17px; font-weight: 400;
+      color: rgba(245,244,240,0.65);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 520px;
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+    }
+    .hero-cta-group {
+      display: flex; align-items: center; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy-deep);
+      background: var(--gold);
+      padding: 16px 36px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: rgba(245,244,240,0.6);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,244,240,0.2);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover {
+      color: var(--warm-white);
+      border-color: rgba(245,244,240,0.5);
+    }
+
+    /* Book cover */
+    .hero-book-wrap {
+      position: relative;
+      display: flex; justify-content: center;
+    }
+    .hero-book-shadow {
+      position: absolute;
+      bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 80%; height: 40px;
+      background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%);
+      filter: blur(8px);
+    }
+    .hero-book-img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 4px;
+      box-shadow:
+        -8px 8px 32px rgba(0,0,0,0.5),
+        -2px 2px 0 rgba(255,255,255,0.04);
+      transform: perspective(800px) rotateY(-4deg);
+      transition: transform 0.4s ease;
+      position: relative; z-index: 2;
+    }
+    .hero-book-img:hover {
+      transform: perspective(800px) rotateY(0deg) scale(1.02);
+    }
+
+    /* ══════════════════════════════════════
+       STRIP — PRECIO DE LA INACCIÓN
+    ══════════════════════════════════════ */
+    .strip {
+      background: var(--teal);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .strip p {
+      font-family: 'Crimson Text', serif;
+      font-size: 18px; font-weight: 600; font-style: italic;
+      color: var(--warm-white);
+      letter-spacing: 0.2px;
+    }
+    .strip strong {
+      font-style: normal; font-weight: 700;
+      color: var(--warm-white);
+    }
+
+    /* ══════════════════════════════════════
+       DOLOR — ¿TE RECONOCES?
+    ══════════════════════════════════════ */
+    .dolor {
+      background: var(--warm-white);
+      padding: 96px 24px;
+    }
+    .dolor-header {
+      text-align: center; margin-bottom: 64px;
+    }
+    .dolor-header h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .dolor-header p {
+      font-size: 16px; color: var(--mid-gray);
+      max-width: 560px; margin: 0 auto; line-height: 1.7;
+    }
+    .dolor-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .dolor-card {
+      background: white;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .dolor-card:hover {
+      box-shadow: 0 8px 40px rgba(27,46,75,0.1);
+      z-index: 1;
+    }
+    .dolor-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .dolor-card:hover::before { transform: scaleX(1); }
+    .dolor-num {
+      font-family: 'Crimson Text', serif;
+      font-size: 56px; font-weight: 700;
+      color: var(--warm-gray);
+      line-height: 1; margin-bottom: 16px;
+      letter-spacing: -2px;
+    }
+    .dolor-card h3 {
+      font-family: 'Crimson Text', serif;
+      font-size: 21px; font-weight: 600;
+      color: var(--navy); margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .dolor-card p {
+      font-size: 14px; color: var(--mid-gray);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════
+       QUOTE INTERRUPTOR
+    ══════════════════════════════════════ */
+    .quote-break {
+      background: var(--navy);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .quote-break::before {
+      content: '"';
+      position: absolute;
+      font-family: 'Crimson Text', serif;
+      font-size: 400px; font-weight: 700;
+      color: rgba(11,122,138,0.06);
+      top: -60px; left: 40px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .quote-break blockquote {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 400; font-style: italic;
+      color: var(--warm-white);
+      line-height: 1.5;
+      max-width: 760px; margin: 0 auto 24px;
+      position: relative; z-index: 2;
+    }
+    .quote-break cite {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--teal-light);
+      font-style: normal;
+    }
+
+    /* ══════════════════════════════════════
+       QUÉ ENCONTRARÁS
+    ══════════════════════════════════════ */
+    .contenido {
+      background: var(--warm-gray);
+      padding: 96px 24px;
+    }
+    .contenido-header {
+      margin-bottom: 56px;
+    }
+    .contenido-header h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .contenido-header p {
+      font-size: 16px; color: var(--mid-gray);
+      max-width: 580px; line-height: 1.7;
+    }
+    .contenido-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .contenido-item {
+      background: white;
+      padding: 32px 36px;
+      display: flex; gap: 24px; align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .contenido-item:hover { background: #fdfcfa; }
+    .ci-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ci-icon svg { width: 22px; height: 22px; }
+    .ci-text h4 {
+      font-family: 'Crimson Text', serif;
+      font-size: 19px; font-weight: 600;
+      color: var(--navy); margin-bottom: 8px;
+    }
+    .ci-text p {
+      font-size: 14px; color: var(--mid-gray);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════
+       PARA QUIÉN
+    ══════════════════════════════════════ */
+    .paraquien {
+      background: var(--warm-white);
+      padding: 96px 24px;
+    }
+    .paraquien-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .paraquien h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .paraquien > div > p {
+      font-size: 16px; color: var(--mid-gray);
+      line-height: 1.7; margin-bottom: 40px;
+    }
+    .perfil-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .perfil-list li {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px 24px;
+      background: white;
+      border-left: 3px solid var(--teal);
+    }
+    .perfil-list li .check {
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .perfil-list li .check svg {
+      width: 11px; height: 11px; color: white;
+    }
+    .perfil-list li span {
+      font-size: 15px; color: var(--navy);
+      line-height: 1.5; font-weight: 400;
+    }
+
+    /* Lado derecho: lo que NO es */
+    .no-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 12px;
+      margin-top: 32px;
+    }
+    .no-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 18px 20px;
+      background: white;
+      border-left: 3px solid var(--warm-gray);
+    }
+    .no-dot {
+      width: 8px; height: 8px; flex-shrink: 0;
+      background: var(--light-gray);
+      border-radius: 50%;
+      margin-top: 5px;
+    }
+    .no-list li span {
+      font-size: 14px; color: var(--mid-gray);
+      line-height: 1.5;
+    }
+    .no-title {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    /* ══════════════════════════════════════
+       AUTORA
+    ══════════════════════════════════════ */
+    .autora {
+      background: var(--navy-deep);
+      padding: 96px 24px;
+      position: relative; overflow: hidden;
+    }
+    .autora::after {
+      content: '';
+      position: absolute; right: -150px; bottom: -150px;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(11,122,138,0.1);
+      border-radius: 50%; pointer-events: none;
+    }
+    .autora-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr;
+      gap: 64px; align-items: start;
+      position: relative; z-index: 2;
+    }
+    .autora-photo-box {
+      position: relative;
+    }
+    .autora-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--navy);
+      border: 1px solid rgba(11,122,138,0.3);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px;
+      border-radius: 2px;
+    }
+    .autora-photo-placeholder p {
+      font-size: 11px; color: rgba(245,244,240,0.3);
+      text-align: center; padding: 0 20px;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    .autora-logo {
+      margin-bottom: 8px;
+    }
+    .autora-content .section-label { color: var(--teal-light); }
+    .autora-content h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700; color: var(--warm-white);
+      line-height: 1.15; margin-bottom: 24px;
+    }
+    .autora-content h2 em {
+      font-style: italic; color: var(--gold-light);
+    }
+    .autora-content p {
+      font-size: 15px; color: rgba(245,244,240,0.7);
+      line-height: 1.8; margin-bottom: 20px;
+    }
+    .autora-content strong { color: var(--warm-white); font-weight: 600; }
+    .autora-tagline {
+      font-family: 'Crimson Text', serif;
+      font-size: 19px; font-style: italic;
+      color: rgba(245,244,240,0.55);
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+      margin-top: 32px;
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════════════════════
+       CTA FINAL
+    ══════════════════════════════════════ */
+    .cta-final {
+      background: var(--warm-white);
+      padding: 96px 24px 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--gold) 100%);
+    }
+    .cta-final h2 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; margin-bottom: 20px;
+      max-width: 700px; margin-left: auto; margin-right: auto;
+    }
+    .cta-final h2 em {
+      font-style: italic; color: var(--teal);
+    }
+    .cta-final p {
+      font-size: 16px; color: var(--mid-gray);
+      max-width: 500px; margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .cta-book-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .cta-book-img {
+      width: 180px;
+      border-radius: 3px;
+      box-shadow: -6px 8px 30px rgba(27,46,75,0.2);
+    }
+    .cta-book-info {
+      text-align: left;
+    }
+    .cta-book-info .book-title {
+      font-family: 'Crimson Text', serif;
+      font-size: 30px; font-weight: 700;
+      color: var(--navy); line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .cta-book-info .book-author {
+      font-size: 14px; color: var(--mid-gray);
+      margin-bottom: 28px;
+    }
+    .cta-btn-group {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .btn-secondary {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--teal);
+      background: transparent;
+      padding: 14px 28px;
+      text-decoration: none;
+      border: 2px solid var(--teal);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: var(--teal);
+      color: white;
+    }
+
+    /* Garantía / confianza */
+    .trust-strip {
+      background: var(--warm-gray);
+      padding: 28px 24px;
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .trust-icon {
+      width: 36px; height: 36px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-icon svg { width: 18px; height: 18px; }
+    .trust-item span {
+      font-size: 13px; font-weight: 600;
+      color: var(--navy); line-height: 1.3;
+    }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--navy-deep);
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(11,122,138,0.15);
+    }
+    footer p {
+      font-size: 12px; color: rgba(245,244,240,0.35);
+      line-height: 1.8;
+    }
+    footer a {
+      color: var(--teal-light); text-decoration: none;
+    }
+    footer a:hover { color: var(--warm-white); }
+    .footer-logo-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-bottom: 20px;
+    }
+
+    /* ══════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.30s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.60s; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-book-wrap {
+        order: -1;
+      }
+      .hero-book-img { max-width: 220px; }
+      .dolor-grid { grid-template-columns: 1fr; gap: 2px; }
+      .contenido-grid { grid-template-columns: 1fr; gap: 2px; }
+      .paraquien-inner { grid-template-columns: 1fr; gap: 48px; }
+      .autora-inner { grid-template-columns: 1fr; gap: 40px; }
+      .autora-photo-placeholder { aspect-ratio: 4/3; }
+      .cta-book-row { flex-direction: column; align-items: center; }
+      .cta-book-info { text-align: center; }
+      .cta-btn-group { justify-content: center; }
+      .trust-strip { gap: 24px; }
+    }
+    @media (max-width: 540px) {
+      nav { padding: 12px 16px; }
+      .nav-cta { padding: 9px 16px; font-size: 11px; }
+      .hero { padding: 100px 16px 60px; }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-logo">
+      <!-- Logo JB -->
+      <img class="nav-logo-mark" src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773766402/LogoJCBS/LogoJCBS_Circle_BGNavy_qscveu.png" alt="Logo Jeniffer Balabuch">
+      <div class="nav-name">
+        <span class="first">Jeniffer </span><span class="last">Balabuch</span>
+      </div>
+    </div>
+    <a href="#conseguir" class="nav-cta">Conseguir el libro</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-accent-line"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-inner container">
+
+      <!-- Texto -->
+      <div>
+        <div class="hero-eyebrow fade-up">Nueva publicación · 2026</div>
+        <h1 class="hero-headline fade-up delay-1">
+          Cada día que no cambias,<br>
+          <em>alguien te está cobrando.</em>
+        </h1>
+        <p class="hero-subhead fade-up delay-2">
+          No es un libro de tecnología. Es un libro sobre el precio exacto —en tiempo, dinero y competitividad— que tu empresa paga por resistirse al cambio.
+        </p>
+        <div class="hero-cta-group fade-up delay-3">
+          <a href="#conseguir" class="btn-primary">Quiero leerlo ahora</a>
+          <a href="#de-que-va" class="btn-ghost">Ver de qué trata →</a>
+        </div>
+      </div>
+
+      <!-- Portada -->
+      <div class="hero-book-wrap fade-up delay-2">
+        <div class="hero-book-shadow"></div>
+        <img
+          class="hero-book-img"
+          src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773765707/ImpuestoTerquedad/Portada_Impuesto_a_la_terquedad_unyvxk.jpg"
+          alt="El Impuesto a la Terquedad — Jeniffer Balabuch"
+          loading="eager"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── STRIP ── -->
+  <div class="strip">
+    <p><strong>La terquedad no es un defecto de carácter.</strong> Es una línea en el balance que muchos empresarios no saben que existe.</p>
+  </div>
+
+  <!-- ── DOLOR — ¿TE RECONOCES? ── -->
+  <section class="dolor" id="de-que-va">
+    <div class="container">
+      <div class="dolor-header">
+        <div class="section-label">El diagnóstico</div>
+        <div class="gold-bar"></div>
+        <h2>¿Te suena familiar alguna de estas frases?</h2>
+        <p>No son hipótesis. Son conversaciones reales con empresarios que tomaron la misma decisión: esperar.</p>
+      </div>
+      <div class="dolor-grid">
+
+        <div class="dolor-card">
+          <div class="dolor-num">01</div>
+          <h3>"Nosotros siempre lo hemos hecho así y funciona."</h3>
+          <p>Lo que funcionó durante veinte años puede estar costándote margen, velocidad y clientes hoy. El problema no es el pasado. Es asumir que el pasado garantiza el futuro.</p>
+        </div>
+
+        <div class="dolor-card">
+          <div class="dolor-num">02</div>
+          <h3>"No es el momento. Cuando estabilicemos, miramos."</h3>
+          <p>La estabilidad que esperas puede no llegar si no cambias cómo trabajas. Tus competidores no esperaron el momento perfecto.</p>
+        </div>
+
+        <div class="dolor-card">
+          <div class="dolor-num">03</div>
+          <h3>"Mis empleados no están preparados para esto."</h3>
+          <p>Probablemente lo que no está preparado es el proceso de cambio, no las personas. Hay una diferencia enorme entre los dos diagnósticos.</p>
+        </div>
+
+        <div class="dolor-card">
+          <div class="dolor-num">04</div>
+          <h3>"Implementamos el sistema pero nadie lo usa."</h3>
+          <p>Compraste la tecnología. No instalaste el cambio. Son dos proyectos distintos y solo pagaste por uno.</p>
+        </div>
+
+        <div class="dolor-card">
+          <div class="dolor-num">05</div>
+          <h3>"Cada vez que quiero mejorar algo, hay resistencia."</h3>
+          <p>La resistencia no es el enemigo. Es una señal de diagnóstico. Este libro te enseña a leerla antes de que se convierta en un bloqueo real.</p>
+        </div>
+
+        <div class="dolor-card">
+          <div class="dolor-num">06</div>
+          <h3>"Digitalicé pero no veo el retorno."</h3>
+          <p>Invertiste en herramientas. La transformación digital sin adopción cultural no genera retorno —genera facturas. Este libro cierra esa brecha.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE ── -->
+  <section class="quote-break">
+    <div class="container">
+      <blockquote>
+        "El problema no es la tecnología.<br>
+        Nunca lo fue."
+      </blockquote>
+      <cite>Jeniffer Balabuch — El Impuesto a la Terquedad</cite>
+    </div>
+  </section>
+
+  <!-- ── QUÉ ENCONTRARÁS ── -->
+  <section class="contenido">
+    <div class="container">
+      <div class="contenido-header">
+        <div class="section-label">Dentro del libro</div>
+        <div class="gold-bar"></div>
+        <h2>No es teoría. Es el mapa que le faltaba a tu empresa.</h2>
+        <p>A través de Ricardo —dueño de una empresa de distribución industrial— verás en tiempo real cómo se toman las decisiones que cuestan caro, y cuáles las que transforman.</p>
+      </div>
+      <div class="contenido-grid">
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>El costo real de la inacción</h4>
+            <p>Aprende a calcular exactamente cuánto te cuesta NO digitalizarte: horas perdidas, errores operativos, clientes que se van sin decirte por qué.</p>
+          </div>
+        </div>
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>El marco de 90 días</h4>
+            <p>Un plan de implementación concreto con cinco herramientas nombradas y probadas para ejecutar el cambio sin paralizar la operación del día a día.</p>
+          </div>
+        </div>
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>Cómo instalar el cambio, no solo anunciarlo</h4>
+            <p>La diferencia entre los proyectos que funcionan y los que mueren en la primera semana no es el presupuesto: es el proceso de adopción cultural.</p>
+          </div>
+        </div>
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>Datos de valoración y decisión estratégica</h4>
+            <p>Incluye datos reales de M&A y valoración empresarial para que entiendas cómo la madurez digital afecta directamente el valor de tu negocio.</p>
+          </div>
+        </div>
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>Análisis estratégico capítulo a capítulo</h4>
+            <p>Cada bloque narrativo va acompañado de una Radiografía Estratégica: el análisis riguroso de lo que acabas de ver en acción en la historia.</p>
+          </div>
+        </div>
+
+        <div class="contenido-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <div class="ci-text">
+            <h4>Preguntas directas al lector</h4>
+            <p>El libro te interpela. No solo te cuenta la historia de Ricardo: te pregunta cuál es tu historia, y qué harías diferente ahora que tienes el diagnóstico.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARA QUIÉN ── -->
+  <section class="paraquien">
+    <div class="container paraquien-inner">
+
+      <!-- Sí es para ti -->
+      <div>
+        <div class="section-label">El lector ideal</div>
+        <div class="gold-bar"></div>
+        <h2>Este libro es para ti si…</h2>
+        <p>Diriges o influyes en una empresa que necesita cambiar la forma en que trabaja, pero no sabe bien por dónde empezar, o ya empezó y algo no está funcionando.</p>
+
+        <ul class="perfil-list">
+          <li>
+            <div class="check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6 5 9 10 3"/>
+              </svg>
+            </div>
+            <span>Eres dueño, director o gerente de una PYME con más de 5 empleados</span>
+          </li>
+          <li>
+            <div class="check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6 5 9 10 3"/>
+              </svg>
+            </div>
+            <span>Ya implementaste una herramienta digital y no ves los resultados que esperabas</span>
+          </li>
+          <li>
+            <div class="check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6 5 9 10 3"/>
+              </svg>
+            </div>
+            <span>Tu equipo resiste los cambios y no sabes bien por qué ni cómo gestionarlo</span>
+          </li>
+          <li>
+            <div class="check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6 5 9 10 3"/>
+              </svg>
+            </div>
+            <span>Sientes que tu competencia avanza más rápido y no entiendes exactamente dónde está la diferencia</span>
+          </li>
+          <li>
+            <div class="check">
+              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6 5 9 10 3"/>
+              </svg>
+            </div>
+            <span>Quieres un plan concreto, no otra charla motivacional sobre innovación</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Lo que no es -->
+      <div>
+        <div class="section-label">Aclaración importante</div>
+        <div class="gold-bar"></div>
+        <h2>Lo que <em style="color:var(--teal); font-style:italic;">no</em> encontrarás aquí</h2>
+        <p>Hay muchos libros de negocios que prometen mucho y entregan poco. Este no es uno de ellos. Pero para que no haya sorpresas, te digo exactamente lo que no es.</p>
+
+        <p class="no-title">Este libro NO es…</p>
+        <ul class="no-list">
+          <li>
+            <div class="no-dot"></div>
+            <span>Un manual técnico de software o sistemas ERP</span>
+          </li>
+          <li>
+            <div class="no-dot"></div>
+            <span>Una obra de autoayuda con promesas vagas de transformación personal</span>
+          </li>
+          <li>
+            <div class="no-dot"></div>
+            <span>Un libro para empresas grandes con departamentos de TI dedicados</span>
+          </li>
+          <li>
+            <div class="no-dot"></div>
+            <span>Una lectura académica con modelos teóricos sin aplicación práctica</span>
+          </li>
+          <li>
+            <div class="no-dot"></div>
+            <span>Otro libro sobre "cultura digital" que no explica qué hacer el lunes siguiente</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── AUTORA ── -->
+  <section class="autora">
+    <div class="autora-inner container">
+
+      <div class="autora-content">
+        <div class="section-label">La autora</div>
+        <h2>Jeniffer Balabuch:<br><em>Cambio cultural ante todo.</em></h2>
+        <p>
+          Con más de dos décadas de experiencia en liderazgo operativo y gerencial que entiende, como profesional, lo que pasa cuando la operación real choca con el cambio.
+        </p>
+        <p>
+          Ha gestionado planes de continuidad de negocio y entornos de alta incertidumbre industrial. Actualmente, cursa estudios en analítica de datos —porque cree que <strong>las decisiones sin datos son opiniones disfrazadas</strong>.
+        </p>
+        <p>
+          <em>El Impuesto a la Terquedad</em> es su primera obra para directivos de PYME: el destilado de lo que falla y de lo que funciona, y del precio exacto que separa a unos de otros.
+        </p>
+        <div class="autora-tagline">
+          "Digitalización sin adopción cultural es gasto.<br>
+          Yo instalo el cambio."
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA FINAL ── -->
+  <section class="cta-final" id="conseguir">
+    <div class="container">
+      <div class="section-label" style="justify-content:center; display:flex;">Ya lo tienes claro</div>
+      <div class="gold-bar" style="display:block; margin:0 auto 24px;"></div>
+      <h2>La pregunta no es si debes leerlo.<br>Es <em>cuánto te cuesta no hacerlo.</em></h2>
+      <p>Cada semana que pasa sin el diagnóstico, el impuesto sigue corriendo. Y ese impuesto no lo emite Hacienda: lo cobran tus competidores.</p>
+
+      <div class="cta-book-row">
+        <img
+          class="cta-book-img"
+          src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773765707/ImpuestoTerquedad/Portada_Impuesto_a_la_terquedad_unyvxk.jpg"
+          alt="Portada El Impuesto a la Terquedad"
+          loading="lazy"
+        >
+        <div class="cta-book-info">
+          <div class="book-title">El Impuesto<br>a la Terquedad</div>
+          <div class="book-author">Jeniffer Balabuch · 2026</div>
+          <div class="cta-btn-group">
+            <!-- Sustituye los href con tus enlaces reales -->
+            <a href="https://www.amazon.com/dp/B0GSX67S87?ref=sp_email" class="btn-primary" target="_blank" rel="noopener"
+               onclick="gtag('event','click_cta_amazon',{'event_category':'CTA'})">
+              Comprar en Amazon
+            </a>
+            <a href="TU_ENLACE_DESCARGA" class="btn-secondary" target="_blank" rel="noopener"
+               onclick="gtag('event','click_cta_descarga',{'event_category':'CTA'})">
+              Primer capítulo gratis a partir del 25.03.2026
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP ── -->
+  <div class="trust-strip">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <span>Plan de acción<br>en 90 días</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0D8F9F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+      </div>
+      <span>Datos reales<br>verificados</span>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo-row">
+      <img src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773766402/LogoJCBS/LogoJCBS_Circle_BGNavy_qscveu.png" alt="Logo JB" width="36">
+    </div>
+    <p>
+      © 2026 Jeniffer Balabuch · Cambio Cultural &amp; Transformación Digital<br>
+      <a href="mailto:hola@jenifferbalabuch.com">hola@jenifferbalabuch.com</a> ·
+      <a href="https://linkedin.com/in/jenifferbalabuch" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://www.jenifferbalabuch.com" target="_blank" rel="noopener">jenifferbalabuch.com</a>
+    </p>
+  </footer>
+
+  <!-- ── INTERSECTION OBSERVER para animaciones al hacer scroll ── -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.dolor-card, .contenido-item, .perfil-list li, .no-list li, .trust-item').forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
