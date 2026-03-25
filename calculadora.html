@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora del Impuesto a la Terquedad — Jeniffer Balabuch</title>
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773779720/LogoJCBS/LogoJCBS_Circle_BGTeal_il6a5u.ico">
+  <meta name="description" content="Calcula en 5 minutos cuánto dinero pierde tu empresa cada mes por no digitalizarse. Herramienta gratuita de Jeniffer Balabuch.">
+  <meta property="og:title" content="Calculadora del Impuesto a la Terquedad">
+  <meta property="og:description" content="Descubre en euros exactos cuánto te cuesta resistirte al cambio. Herramienta gratuita.">
+  <meta property="og:image" content="https://d1yei2z3i6k35z.cloudfront.net/16597047/69b88c5233ad51.55986636_Portada_Impuesto_a_la_terquedad.jpg">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JL7ZQWXHY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0JL7ZQWXHY');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:       #1B2E4B;
+      --navy-deep:  #121F33;
+      --teal:       #0B7A8A;
+      --teal-light: #0D8F9F;
+      --gold:       #A8722A;
+      --gold-light: #C28A3A;
+      --warm-white: #F5F4F0;
+      --warm-gray:  #E8E4DC;
+      --mid-gray:   #4A5568;
+      --light-gray: #D1CEC8;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--navy);
+      background: var(--warm-white);
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .gold-bar {
+      display: inline-block;
+      width: 40px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+    .section-label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 16px;
+    }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(18,31,51,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(11,122,138,0.2);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark { width: 36px; height: 36px; }
+    .nav-name {
+      font-family: 'Crimson Text', serif;
+      font-size: 18px; color: var(--warm-white); line-height: 1;
+    }
+    .nav-name .first { font-weight: 400; opacity: 0.8; }
+    .nav-name .last  { font-weight: 700; }
+    .nav-cta {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy); background: var(--gold);
+      padding: 10px 22px; text-decoration: none;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ══ HERO CALCULADORA ══ */
+    .hero-calc {
+      background: var(--navy-deep);
+      padding: 120px 24px 72px;
+      position: relative; overflow: hidden;
+    }
+    .hero-calc::before {
+      content: '';
+      position: absolute; right: -200px; top: -200px;
+      width: 800px; height: 800px;
+      border: 1px solid rgba(11,122,138,0.10);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero-calc::after {
+      content: '';
+      position: absolute; right: -320px; top: -320px;
+      width: 1100px; height: 1100px;
+      border: 1px solid rgba(11,122,138,0.05);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero-accent-line {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--teal);
+    }
+    .hero-dots {
+      position: absolute; left: 60px; bottom: 60px;
+      width: 120px; height: 120px;
+      background-image: radial-gradient(circle, rgba(11,122,138,0.2) 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+      pointer-events: none;
+    }
+    .hero-calc-inner {
+      max-width: 760px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 2px; background: var(--teal);
+    }
+    .hero-calc-inner h1 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(34px, 4.5vw, 58px);
+      font-weight: 700; color: var(--warm-white);
+      line-height: 1.08; letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+    .hero-calc-inner h1 em {
+      font-style: italic; color: var(--gold-light);
+    }
+    .hero-calc-inner p {
+      font-size: 17px; font-weight: 400;
+      color: rgba(245,244,240,0.62);
+      line-height: 1.7; max-width: 560px;
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+    }
+
+    /* ══ STEPPER ══ */
+    .calc-wrap {
+      background: var(--warm-white);
+      padding: 80px 24px 100px;
+    }
+    .calc-inner {
+      max-width: 680px; margin: 0 auto;
+    }
+
+    /* Progress */
+    .progress-bar {
+      display: flex; gap: 6px; align-items: center;
+      margin-bottom: 10px;
+    }
+    .progress-bar .seg {
+      height: 4px; border-radius: 2px;
+      transition: all 0.35s ease;
+      background: var(--light-gray);
+      flex: 1;
+    }
+    .progress-bar .seg.done  { background: var(--teal); }
+    .progress-bar .seg.active { background: var(--navy); flex: 2; }
+    .progress-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 40px;
+    }
+
+    /* Step */
+    .step { display: none; }
+    .step.active {
+      display: block;
+      animation: stepIn 0.28s ease;
+    }
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-family: 'Crimson Text', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--navy); margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .step-desc {
+      font-size: 15px; color: var(--mid-gray);
+      line-height: 1.7; margin-bottom: 36px;
+      max-width: 520px;
+      border-left: 2px solid var(--gold);
+      padding-left: 16px;
+    }
+
+    /* Slider row */
+    .field { margin-bottom: 28px; }
+    .field-label {
+      font-size: 13px; font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px; display: block;
+    }
+    .slider-row {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .slider-row input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--light-gray);
+      outline: none;
+      cursor: pointer;
+    }
+    .slider-row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--navy);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .slider-row input[type="range"]::-webkit-slider-thumb:hover {
+      background: var(--teal);
+      transform: scale(1.15);
+    }
+    .slider-row input[type="range"]::-moz-range-thumb {
+      width: 18px; height: 18px;
+      border-radius: 50%; border: none;
+      background: var(--navy); cursor: pointer;
+    }
+    .slider-val {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13px; font-weight: 700;
+      color: var(--navy);
+      min-width: 110px; text-align: right;
+    }
+
+    /* Toggle sí/no */
+    .toggle-group {
+      display: flex; gap: 8px; margin-bottom: 20px;
+    }
+    .toggle-group button {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 9px 24px;
+      border: 2px solid var(--light-gray);
+      background: transparent; cursor: pointer;
+      color: var(--mid-gray); border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .toggle-group button.on {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--warm-white);
+    }
+    .toggle-extra { overflow: hidden; }
+
+    /* Nav buttons */
+    .nav-row {
+      display: flex; gap: 12px; margin-top: 44px;
+    }
+    .btn-back {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--mid-gray); background: transparent;
+      border: 2px solid var(--light-gray);
+      padding: 14px 28px; cursor: pointer;
+      border-radius: 2px; transition: all 0.2s;
+    }
+    .btn-back:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-next {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy-deep); background: var(--gold);
+      border: none; padding: 14px 40px;
+      cursor: pointer; border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      flex: 1;
+    }
+    .btn-next:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ══ RESULTS ══ */
+    .results { display: none; }
+    .results.active { display: block; animation: stepIn 0.35s ease; }
+
+    .result-hero {
+      background: var(--navy);
+      padding: 56px 48px;
+      margin-bottom: 2px;
+      position: relative; overflow: hidden;
+    }
+    .result-hero::before {
+      content: '';
+      position: absolute; right: -80px; top: -80px;
+      width: 320px; height: 320px;
+      border: 1px solid rgba(11,122,138,0.15);
+      border-radius: 50%; pointer-events: none;
+    }
+    .result-hero .section-label { color: var(--teal-light); position: relative; z-index: 2; }
+    .result-hero .total-label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(245,244,240,0.5);
+      margin-bottom: 12px;
+      position: relative; z-index: 2;
+    }
+    .result-hero .total-amount {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 700; color: var(--warm-white);
+      line-height: 1; letter-spacing: -2px;
+      margin-bottom: 6px;
+      position: relative; z-index: 2;
+    }
+    .result-hero .total-amount span {
+      color: var(--gold-light);
+    }
+    .result-hero .total-sub {
+      font-size: 15px; color: rgba(245,244,240,0.55);
+      line-height: 1.6; margin-top: 12px;
+      position: relative; z-index: 2;
+    }
+    .result-hero .total-sub strong { color: var(--warm-white); }
+
+    /* Category breakdown */
+    .breakdown {
+      background: white;
+      margin-bottom: 2px;
+    }
+    .breakdown-header {
+      padding: 28px 36px 0;
+    }
+    .breakdown-header h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 0;
+    }
+    .cat-row {
+      padding: 22px 36px;
+      border-bottom: 1px solid var(--warm-gray);
+      display: flex; align-items: flex-start; gap: 20px;
+    }
+    .cat-row:last-child { border-bottom: none; }
+    .cat-bar-wrap { flex: 1; }
+    .cat-name {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 14px; font-weight: 700;
+      color: var(--navy); margin-bottom: 3px;
+    }
+    .cat-desc {
+      font-size: 12px; color: var(--mid-gray);
+      line-height: 1.5; margin-bottom: 10px;
+    }
+    .bar-track {
+      height: 5px; background: var(--warm-gray);
+      border-radius: 3px; overflow: hidden;
+    }
+    .bar-fill {
+      height: 5px; background: var(--teal);
+      border-radius: 3px;
+      transition: width 0.6s ease;
+    }
+    .cat-amount {
+      font-family: 'Crimson Text', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap; margin-top: 2px;
+      text-align: right; min-width: 100px;
+    }
+
+    /* EBITDA comparison */
+    .ebitda-box {
+      background: var(--warm-gray);
+      padding: 32px 36px;
+      margin-bottom: 2px;
+    }
+    .ebitda-box h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 20px;
+    }
+    .ebitda-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 10px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .ebitda-row:last-child { border-bottom: none; }
+    .ebitda-row .er-label {
+      font-size: 14px; color: var(--mid-gray);
+    }
+    .ebitda-row .er-val {
+      font-family: 'Crimson Text', serif;
+      font-size: 22px; font-weight: 700; color: var(--navy);
+    }
+    .ebitda-row.highlight .er-label {
+      font-size: 15px; font-weight: 700; color: var(--navy);
+    }
+    .ebitda-row.highlight .er-val {
+      font-size: 28px; color: var(--teal);
+    }
+    .er-neg { color: var(--gold) !important; }
+
+    /* CTA captura */
+    .capture-box {
+      background: var(--navy-deep);
+      padding: 48px 48px;
+      position: relative; overflow: hidden;
+    }
+    .capture-box::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--teal);
+    }
+    .capture-box h3 {
+      font-family: 'Crimson Text', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--warm-white); margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .capture-box h3 em { font-style: italic; color: var(--gold-light); }
+    .capture-box p {
+      font-size: 15px; color: rgba(245,244,240,0.62);
+      line-height: 1.7; margin-bottom: 28px;
+      max-width: 480px;
+    }
+    .email-row {
+      display: flex; gap: 0; max-width: 500px;
+    }
+    .email-row input[type="email"] {
+      flex: 1;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 14px; padding: 14px 18px;
+      border: 2px solid rgba(245,244,240,0.15);
+      background: rgba(245,244,240,0.06);
+      color: var(--warm-white); outline: none;
+      border-radius: 2px 0 0 2px;
+      transition: border-color 0.2s;
+    }
+    .email-row input[type="email"]::placeholder {
+      color: rgba(245,244,240,0.3);
+    }
+    .email-row input[type="email"]:focus {
+      border-color: var(--teal);
+    }
+    .email-row button {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy-deep); background: var(--gold);
+      border: none; padding: 14px 24px;
+      cursor: pointer; border-radius: 0 2px 2px 0;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .email-row button:hover { background: var(--gold-light); }
+    .email-confirm {
+      display: none;
+      font-size: 14px; font-weight: 600;
+      color: var(--teal-light); margin-top: 12px;
+    }
+    .email-error {
+      display: none;
+      font-size: 12px; color: #E07B6A;
+      margin-top: 8px;
+    }
+    .capture-note {
+      font-size: 11px; color: rgba(245,244,240,0.3);
+      margin-top: 14px; letter-spacing: 0.3px;
+    }
+
+    /* Recalculate */
+    .recalc-row {
+      padding: 32px 0; text-align: center;
+    }
+    .btn-recalc {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--teal); background: transparent;
+      border: 2px solid var(--teal); padding: 12px 32px;
+      cursor: pointer; border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-recalc:hover { background: var(--teal); color: white; }
+
+    /* ══ STRIP ══ */
+    .strip {
+      background: var(--teal); padding: 20px 24px; text-align: center;
+    }
+    .strip p {
+      font-family: 'Crimson Text', serif;
+      font-size: 18px; font-weight: 600; font-style: italic;
+      color: var(--warm-white); letter-spacing: 0.2px;
+    }
+    .strip strong { font-style: normal; font-weight: 700; }
+    .strip a {
+      color: var(--warm-white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: var(--navy-deep);
+      padding: 40px 24px; text-align: center;
+      border-top: 1px solid rgba(11,122,138,0.15);
+    }
+    footer p {
+      font-size: 12px; color: rgba(245,244,240,0.35);
+      line-height: 1.8;
+    }
+    footer a { color: var(--teal-light); text-decoration: none; }
+    footer a:hover { color: var(--warm-white); }
+    .footer-logo-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-bottom: 20px;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 600px) {
+      .result-hero { padding: 36px 24px; }
+      .cat-row { padding: 18px 24px; }
+      .breakdown-header { padding: 24px 24px 0; }
+      .ebitda-box { padding: 24px; }
+      .capture-box { padding: 32px 24px; }
+      .email-row { flex-direction: column; }
+      .email-row input[type="email"] { border-radius: 2px; }
+      .email-row button { border-radius: 2px; width: 100%; padding: 14px; }
+      nav { padding: 12px 16px; }
+      .nav-cta { padding: 9px 14px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img class="nav-logo-mark" src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773766402/LogoJCBS/LogoJCBS_Circle_BGNavy_qscveu.png" alt="Logo Jeniffer Balabuch">
+      <div class="nav-name">
+        <span class="first">Jeniffer </span><span class="last">Balabuch</span>
+      </div>
+    </a>
+    <a href="https://www.amazon.es/dp/B0GSX67S87?tag=jenifferbalab-21&utm_source=calculadora&utm_medium=web&utm_campaign=lanzamiento_2026" class="nav-cta" target="_blank" rel="noopener">Conseguir el libro</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero-calc">
+    <div class="hero-accent-line"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-calc-inner container fade-up">
+      <div class="hero-eyebrow">Herramienta gratuita · 5 minutos</div>
+      <h1>¿Cuánto te está costando<br><em>resistirte al cambio?</em></h1>
+      <p>
+        Responde cinco bloques de preguntas sobre tu empresa y te digo exactamente cuánto dinero sale de tu EBITDA cada mes por fricciones que ya puedes eliminar.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CALCULADORA ── -->
+  <section class="calc-wrap">
+    <div class="calc-inner">
+
+      <!-- Progress -->
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-label" id="progressLabel"></div>
+
+      <!-- ── PASO 0: Tu empresa ── -->
+      <div class="step active" id="step0">
+        <h2 class="step-title">Tu empresa</h2>
+        <p class="step-desc">Cuéntame lo básico. Con estos datos el cálculo sale en euros reales, no en porcentajes abstractos.</p>
+
+        <div class="field">
+          <label class="field-label">Facturación anual aproximada</label>
+          <div class="slider-row">
+            <input type="range" min="100000" max="10000000" step="50000" value="1500000" id="sl_fac"
+              oninput="S.fac=+this.value; setText('vl_fac', fK(+this.value))">
+            <span class="slider-val" id="vl_fac">1,5 M€</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">EBITDA actual (%)</label>
+          <div class="slider-row">
+            <input type="range" min="1" max="35" step="1" value="12" id="sl_ebi"
+              oninput="S.ebi=+this.value; setText('vl_ebi', this.value+'%')">
+            <span class="slider-val" id="vl_ebi">12%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Número de empleados</label>
+          <div class="slider-row">
+            <input type="range" min="5" max="250" step="1" value="30" id="sl_emp"
+              oninput="S.emp=+this.value; setText('vl_emp', this.value)">
+            <span class="slider-val" id="vl_emp">30</span>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-next" onclick="goTo(1)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- ── PASO 1: Trampa directiva ── -->
+      <div class="step" id="step1">
+        <h2 class="step-title">La trampa directiva</h2>
+        <p class="step-desc">Elena dedicaba 15 horas semanales a cruzar datos para que el sistema no les llevara a la quiebra. ¿Tienes tu propia Elena?</p>
+
+        <div class="field">
+          <label class="field-label">¿Alguien dedica tiempo significativo a validar datos manualmente?</label>
+          <div class="toggle-group">
+            <button id="btn_si" class="on" onclick="setToggle(true)">Sí</button>
+            <button id="btn_no" onclick="setToggle(false)">No</button>
+          </div>
+        </div>
+
+        <div class="toggle-extra" id="toggle_extra">
+          <div class="field">
+            <label class="field-label">Horas semanales dedicadas a esas tareas</label>
+            <div class="slider-row">
+              <input type="range" min="1" max="25" step="1" value="10" id="sl_hv"
+                oninput="S.hv=+this.value; setText('vl_hv', this.value+' h / semana')">
+              <span class="slider-val" id="vl_hv">10 h / semana</span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Salario mensual bruto de esa persona</label>
+            <div class="slider-row">
+              <input type="range" min="1500" max="8000" step="100" value="3500" id="sl_sal"
+                oninput="S.sal=+this.value; setText('vl_sal', fEur(+this.value)+' / mes')">
+              <span class="slider-val" id="vl_sal">3.500€ / mes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-back" onclick="goTo(0)">← Atrás</button>
+          <button class="btn-next" onclick="goTo(2)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- ── PASO 2: Errores operativos ── -->
+      <div class="step" id="step2">
+        <h2 class="step-title">Los errores operativos</h2>
+        <p class="step-desc">Los alemanes, la constructora, la factura rectificada. Cada error tiene un coste doble: el dinero y el tiempo de corregirlo.</p>
+
+        <div class="field">
+          <label class="field-label">Pedidos o facturas con error al mes (promedio)</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="30" step="1" value="4" id="sl_err"
+              oninput="S.err=+this.value; setText('vl_err', this.value+' errores / mes')">
+            <span class="slider-val" id="vl_err">4 errores / mes</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Tiempo medio de corrección por error</label>
+          <div class="slider-row">
+            <input type="range" min="0.5" max="12" step="0.5" value="2" id="sl_hce"
+              oninput="S.hce=+this.value; setText('vl_hce', this.value+' horas')">
+            <span class="slider-val" id="vl_hce">2 horas</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Penalizaciones, re-envíos urgentes o abonos en el último año</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="100000" step="500" value="5000" id="sl_pen"
+              oninput="S.pen=+this.value; setText('vl_pen', fK(+this.value))">
+            <span class="slider-val" id="vl_pen">5.000€</span>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-back" onclick="goTo(1)">← Atrás</button>
+          <button class="btn-next" onclick="goTo(3)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- ── PASO 3: Datos ocultos ── -->
+      <div class="step" id="step3">
+        <h2 class="step-title">Los datos ocultos</h2>
+        <p class="step-desc">El Excel de Sergio, el Dropbox de Elena, el WhatsApp del almacén. Información que existe pero no vive en el sistema central.</p>
+
+        <div class="field">
+          <label class="field-label">Personas que manejan datos críticos fuera del sistema central</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="10" step="1" value="2" id="sl_pex"
+              oninput="S.pex=+this.value; setText('vl_pex', this.value+' personas')">
+            <span class="slider-val" id="vl_pex">2 personas</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Horas semanales que cada una dedica a gestionar esos datos</label>
+          <div class="slider-row">
+            <input type="range" min="1" max="20" step="1" value="6" id="sl_hex"
+              oninput="S.hex=+this.value; setText('vl_hex', this.value+' h / semana')">
+            <span class="slider-val" id="vl_hex">6 h / semana</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Financiación extra por imprevistos de tesorería en el último año</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="300000" step="5000" value="0" id="sl_cre"
+              oninput="S.cre=+this.value; setText('vl_cre', +this.value===0 ? 'Ninguna' : fK(+this.value))">
+            <span class="slider-val" id="vl_cre">Ninguna</span>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-back" onclick="goTo(2)">← Atrás</button>
+          <button class="btn-next" onclick="goTo(4)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- ── PASO 4: Fricción comercial ── -->
+      <div class="step" id="step4">
+        <h2 class="step-title">La fricción comercial</h2>
+        <p class="step-desc">Manuel vendía sin mirar el coste real. Lucía tardaba 4 minutos en dar un precio y el cliente colgaba. ¿Cuánto te cuesta la fricción en ventas?</p>
+
+        <div class="field">
+          <label class="field-label">Clientes que no repitieron por errores operativos en el último año</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="15" step="1" value="2" id="sl_cpe"
+              oninput="S.cpe=+this.value; setText('vl_cpe', this.value+' clientes')">
+            <span class="slider-val" id="vl_cpe">2 clientes</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Compra media trimestral de esos clientes</label>
+          <div class="slider-row">
+            <input type="range" min="500" max="150000" step="500" value="15000" id="sl_tkt"
+              oninput="S.tkt=+this.value; setText('vl_tkt', fK(+this.value))">
+            <span class="slider-val" id="vl_tkt">15.000€</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Descuentos concedidos fuera del sistema (% sobre facturación)</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="10" step="0.5" value="2" id="sl_dsc"
+              oninput="S.dsc=+this.value; setText('vl_dsc', this.value+'%')">
+            <span class="slider-val" id="vl_dsc">2%</span>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-back" onclick="goTo(3)">← Atrás</button>
+          <button class="btn-next" onclick="showResults()">Calcular mi impuesto →</button>
+        </div>
+      </div>
+
+      <!-- ── RESULTADOS ── -->
+      <div class="results" id="results">
+
+        <div class="result-hero">
+          <div class="section-label">Tu diagnóstico</div>
+          <div class="total-label">Tu Impuesto a la Terquedad — coste anual estimado</div>
+          <div class="total-amount" id="res_total">—</div>
+          <div class="total-sub" id="res_sub">—</div>
+        </div>
+
+        <div class="breakdown">
+          <div class="breakdown-header">
+            <h3>Desglose por categoría</h3>
+          </div>
+          <div class="cat-row">
+            <div class="cat-bar-wrap">
+              <div class="cat-name">Trampa directiva</div>
+              <div class="cat-desc">Personal clave en validación manual de datos</div>
+              <div class="bar-track"><div class="bar-fill" id="bar0" style="width:0%"></div></div>
+            </div>
+            <div class="cat-amount" id="cat0">—</div>
+          </div>
+          <div class="cat-row">
+            <div class="cat-bar-wrap">
+              <div class="cat-name">Errores operativos</div>
+              <div class="cat-desc">Correcciones, penalizaciones y re-trabajos</div>
+              <div class="bar-track"><div class="bar-fill" id="bar1" style="width:0%"></div></div>
+            </div>
+            <div class="cat-amount" id="cat1">—</div>
+          </div>
+          <div class="cat-row">
+            <div class="cat-bar-wrap">
+              <div class="cat-name">Silos de información</div>
+              <div class="cat-desc">Datos ocultos y crédito por imprevisión de caja</div>
+              <div class="bar-track"><div class="bar-fill" id="bar2" style="width:0%"></div></div>
+            </div>
+            <div class="cat-amount" id="cat2">—</div>
+          </div>
+          <div class="cat-row">
+            <div class="cat-bar-wrap">
+              <div class="cat-name">Fricción comercial</div>
+              <div class="cat-desc">Clientes perdidos y descuentos no registrados</div>
+              <div class="bar-track"><div class="bar-fill" id="bar3" style="width:0%"></div></div>
+            </div>
+            <div class="cat-amount" id="cat3">—</div>
+          </div>
+        </div>
+
+        <div class="ebitda-box">
+          <h3>Potencial recuperable</h3>
+          <div class="ebitda-row">
+            <span class="er-label">EBITDA actual</span>
+            <span class="er-val" id="er_actual">—</span>
+          </div>
+          <div class="ebitda-row">
+            <span class="er-label">Impuesto que estás pagando</span>
+            <span class="er-val er-neg" id="er_imp">—</span>
+          </div>
+          <div class="ebitda-row highlight">
+            <span class="er-label">EBITDA posible en 90 días</span>
+            <span class="er-val" id="er_pos">—</span>
+          </div>
+        </div>
+
+        <div class="capture-box">
+          <h3>¿Quieres saber cómo detenerlo<br><em>en 90 días?</em></h3>
+          <p>El Kit de Implementación del Manual de Guerra incluye las 5 herramientas del Capítulo 11 en formato listo para usar en tu empresa. Sin necesidad de consultora externa.</p>
+          <!-- <div class="email-row">
+            <input type="email" id="em_input" placeholder="tu@empresa.com">
+            <button onclick="handleEmail()">Enviar kit</button>
+          </div>
+          <div class="email-confirm" id="em_confirm">El kit llega a tu correo en los próximos minutos.</div>
+          <div class="email-error" id="em_error">Introduce un email válido para continuar.</div> -->
+          <p class="capture-note">Sin spam. Solo el kit y la secuencia de implementación de 90 días.</p>
+          <p class="capture-note">Disponible pronto!.</p>
+        </div>
+
+        <div class="recalc-row">
+          <button class="btn-recalc" onclick="restart()">← Ajustar mis datos</button>
+        </div>
+
+      </div>
+      <!-- /resultados -->
+
+    </div>
+  </section>
+
+  <!-- ── STRIP ── -->
+  <div class="strip">
+    <p><strong>¿Tienes ya el libro?</strong> La calculadora es el Capítulo 0. <a href="https://www.amazon.es/dp/B0GSX67S87?tag=jenifferbalab-21&utm_source=calculadora&utm_medium=strip&utm_campaign=lanzamiento_2026" target="_blank" rel="noopener">El mapa completo está aquí →</a></p>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo-row">
+      <img src="https://res.cloudinary.com/de1gb2ehv/image/upload/v1773766402/LogoJCBS/LogoJCBS_Circle_BGNavy_qscveu.png" alt="Logo JB" width="36">
+    </div>
+    <p>
+      © 2026 Jeniffer Balabuch · Cambio Cultural &amp; Transformación Digital<br>
+      <a href="index.html">Volver a la página del libro</a> ·
+      <a href="https://linkedin.com/in/jenifferbalabuch" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    /* ── Estado ── */
+    var S = {
+      fac: 1500000, ebi: 12, emp: 30,
+      valida: true, hv: 10, sal: 3500,
+      err: 4, hce: 2, pen: 5000,
+      pex: 2, hex: 6, cre: 0,
+      cpe: 2, tkt: 15000, dsc: 2
+    };
+    var STEP_LABELS = ['Tu empresa','Trampa directiva','Errores operativos','Datos ocultos','Fricción comercial'];
+    var ADM_RATE = 18;
+    var currentStep = 0;
+
+    /* ── Helpers de formato ── */
+    function setText(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
+    function fEur(n) { return new Intl.NumberFormat('es-ES', {maximumFractionDigits: 0}).format(Math.round(n)) + '€'; }
+    function fFull(n) { return new Intl.NumberFormat('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0}).format(Math.round(n)); }
+    function fK(n) {
+      if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.', ',') + ' M€';
+      if (n >= 10000)   return new Intl.NumberFormat('es-ES', {maximumFractionDigits: 0}).format(Math.round(n / 1000) * 1000) + '€';
+      if (n >= 1000)    return fEur(n);
+      return fEur(n);
+    }
+
+    /* ── Progreso ── */
+    function renderProgress(step) {
+      var bar = document.getElementById('progressBar');
+      var lbl = document.getElementById('progressLabel');
+      bar.innerHTML = '';
+      for (var i = 0; i < 5; i++) {
+        var d = document.createElement('div');
+        d.className = 'seg' + (i < step ? ' done' : (i === step ? ' active' : ''));
+        bar.appendChild(d);
+      }
+      if (step < 5) lbl.textContent = 'Paso ' + (step + 1) + ' de 5 — ' + STEP_LABELS[step];
+      else          lbl.textContent = 'Diagnóstico completado';
+    }
+
+    /* ── Navegación ── */
+    function goTo(n) {
+      document.getElementById('step' + currentStep).classList.remove('active');
+      currentStep = n;
+      document.getElementById('step' + currentStep).classList.add('active');
+      renderProgress(currentStep);
+      window.scrollTo({ top: document.querySelector('.calc-wrap').offsetTop - 80, behavior: 'smooth' });
+      gtag('event', 'calc_step_' + n, {'event_category': 'Calculadora'});
+    }
+
+    /* ── Toggle sí/no ── */
+    function setToggle(val) {
+      S.valida = val;
+      document.getElementById('btn_si').className = val ? 'on' : '';
+      document.getElementById('btn_no').className = !val ? 'on' : '';
+      document.getElementById('toggle_extra').style.display = val ? 'block' : 'none';
+    }
+
+    /* ── Cálculo ── */
+    function calc() {
+      var hval = (S.sal * 14) / (52 * 40);
+      var c1 = S.valida ? S.hv * 52 * hval : 0;
+      var c2 = (S.err * S.hce * ADM_RATE * 12) + S.pen;
+      var c3 = (S.pex * S.hex * 52 * ADM_RATE) + (S.cre * 0.055);
+      var c4 = (S.cpe * S.tkt * 4) + (S.fac * S.dsc / 100);
+      var total = c1 + c2 + c3 + c4;
+      var ebitda = S.fac * S.ebi / 100;
+      return { c1: c1, c2: c2, c3: c3, c4: c4, total: total, ebitda: ebitda, pct: total / ebitda * 100 };
+    }
+
+    /* ── Mostrar resultados ── */
+    function showResults() {
+      var r = calc();
+      var cats = [r.c1, r.c2, r.c3, r.c4];
+      var mx = Math.max.apply(null, cats);
+      var mxSafe = mx > 0 ? mx : 1;
+
+      /* Total */
+      document.getElementById('res_total').textContent = fFull(r.total);
+      document.getElementById('res_sub').innerHTML =
+        'Representa el <strong>' + Math.round(r.pct) + '%</strong> de tu EBITDA actual de ' + fK(r.ebitda);
+
+      /* Categorías */
+      for (var i = 0; i < 4; i++) {
+        document.getElementById('cat' + i).textContent = fFull(cats[i]);
+        setTimeout((function(idx) {
+          return function() {
+            document.getElementById('bar' + idx).style.width = Math.round(cats[idx] / mxSafe * 100) + '%';
+          };
+        })(i), 200 + i * 80);
+      }
+
+      /* EBITDA */
+      document.getElementById('er_actual').textContent = fFull(r.ebitda);
+      document.getElementById('er_imp').textContent   = '− ' + fFull(r.total);
+      document.getElementById('er_pos').textContent   = fFull(r.ebitda + r.total);
+
+      /* Mostrar */
+      for (var j = 0; j < 5; j++) document.getElementById('step' + j).classList.remove('active');
+      document.getElementById('results').classList.add('active');
+      renderProgress(5);
+      window.scrollTo({ top: document.querySelector('.calc-wrap').offsetTop - 80, behavior: 'smooth' });
+      gtag('event', 'calc_completed', {'event_category': 'Calculadora', 'value': Math.round(r.total)});
+    }
+
+    /* ── Email ── */
+    function handleEmail() {
+      var em = document.getElementById('em_input');
+      var conf = document.getElementById('em_confirm');
+      var err  = document.getElementById('em_error');
+      if (em && em.value.includes('@') && em.value.includes('.')) {
+        em.style.display = 'none';
+        em.nextElementSibling.style.display = 'none';
+        conf.style.display = 'block';
+        err.style.display  = 'none';
+        gtag('event', 'calc_email_submit', {'event_category': 'Lead', 'event_label': em.value});
+      } else {
+        err.style.display  = 'block';
+        conf.style.display = 'none';
+      }
+    }
+
+    /* ── Reiniciar ── */
+    function restart() {
+      document.getElementById('results').classList.remove('active');
+      currentStep = 0;
+      document.getElementById('step0').classList.add('active');
+      renderProgress(0);
+      window.scrollTo({ top: document.querySelector('.calc-wrap').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    /* ── Init ── */
+    renderProgress(0);
+
+    /* ── Animaciones al hacer scroll (igual que landing) ── */
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up').forEach(function(el) {
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
